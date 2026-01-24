@@ -1,62 +1,38 @@
 # Stack-and-Queue-using-List
 
-class Stack:
-    def __init__(self):
-        self.items = []
-
-    def push(self, item):
-        self.items.append(item)
-
-    def pop(self):
-        return self.items.pop() if self.items else None
-
-    def peek(self):
-        return self.items[-1] if self.items else None
-
-    def display(self):
-        print("Stack:", self.items)
+# Stack (LIFO)
+stack = []
 
 print("--- Stack ---")
-stack = Stack()
-stack.push(10)
-stack.push(20)
-stack.push(30)
-stack.display()
-print("Pop:", stack.pop())
-stack.display()
-print("Peek:", stack.peek())
+stack.append(10)
+stack.append(20)
+stack.append(30)
+print("Stack:", stack)
 
-class Queue:
-    def __init__(self):
-        self.items = []
+print("Peek:", stack[-1])
 
-    def enqueue(self, item):
-        self.items.append(item)
+stack.pop()
+print("After Pop:", stack)
 
-    def dequeue(self):
-        return self.items.pop(0) if self.items else None
-
-    def display(self):
-        print("Queue:", self.items)
+# Queue (FIFO)
+queue = []
 
 print("\n--- Queue ---")
-queue = Queue()
-queue.enqueue(10)
-queue.enqueue(20)
-queue.enqueue(30)
-queue.display()
-print("Dequeue:", queue.dequeue())
-queue.display()
+queue.append(10)
+queue.append(20)
+queue.append(30)
+print("Queue:", queue)
 
-OUTPUT :
+queue.pop(0)
+print("After Dequeue:", queue)
+
+Output:
 
 --- Stack ---
 Stack: [10, 20, 30]
-Pop: 30
-Stack: [10, 20]
-Peek: 20
+Peek: 30
+After Pop: [10, 20]
 
 --- Queue ---
 Queue: [10, 20, 30]
-Dequeue: 10
-Queue: [20, 30]
+After Dequeue: [20, 30]
